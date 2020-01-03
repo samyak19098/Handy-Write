@@ -1,0 +1,56 @@
+<html>
+
+	<head>
+
+		<link rel="stylesheet" type="text/css" href="homepage.css">
+		<title>Hnady-Write | An Interactive Writing Platform</title>
+		
+	</head>
+	<body >
+		 <script src="speakClient.js"></script>
+		 <div id="audio"></div>
+
+		<div id="particles-js"></div>
+
+		<div id = "title">HANDY - WRITE <br> <div id = "des">AN INTERACTIVE WRITING PLATFORM</div></div>
+		<div id="a1" onClick="change()"></div>
+		<div id="a2"></div>
+		<!-- <p id="slideshow" style="background-image: url(pictures/homepage/slideshow1.jpg);"> -->
+		</p>
+		<div class="panel" id="aboutus" onclick="popup(1);"><img src="pictures/homepage/aboutus.png" id = "adjimg1"><h1 style="text-align: center;" id = "level1_adj">LEVEL 1</h1></div>
+		<div class="panel" id="contactus" onclick="popup(2);"><img src="pictures/homepage/contactus.png" id = "adjimg2"><h1 style="text-align: center;" id = "level2_adj">LEVEL 2</h1></div>
+
+
+		<div id="popup"></div>
+		<span id="popup-content1" >
+			<h1 style="text-align: center;" >LEVEL 1</h1>
+			<p style="font-family: 'copperplate gothic'; font-size: 20px; padding: 90px; padding-top: 0px; font-weight: bold;">Travelling is a passion. And we are your perfect travelling partner. With the best information about each place, you can be sure of the place you are planning to visit. You can trust us blindfolded. </p>
+		</span>
+		<span id="popup-content2"><h1 style="text-align: center;">LEVEL 2</h1>
+			<p style="font-family: 'copperplate gothic'; font-size: 20px; padding: 90px; padding-top: 0px; font-weight: bold;">PHONE NO.: 23459876<br>FAX NO.: 23349447<br>E-mail ID: travo@gmail.com </p></span>
+		<!-- <div id="hr"></div>
+		<a href="france.html"><div class="country" id="france"><img src="pictures/homepage/france.png"><h1 style="text-align: center; position: relative; top: 17px;">FRANCE</h1></div></a>
+		<a href="italy.html"><div class="country" id="italy"><img src="pictures/homepage/italy.png" style="height: 80%;"><h1 style="text-align: center;">ITALY</h1></div></a>
+		<a href="germany.html"><div class="country" id="germany"><img src="pictures/homepage/germany.png"><h1 style="text-align: center; position: relative; top: 15px;">GERMANY</h1></div></a>
+		<a href="brazil.html"><div class="country" id="brazil"><img src="pictures/homepage/brazil.png" style="height: 75%;"><h1 style="text-align: center; position: relative; top: 17px;">BRAZIL</h1></div></a> -->
+		<span id="bars" onclick="menu();" style="height: 100%; display: block;">
+			<div id="bar1"></div>
+			<div id="bar2"></div>
+			<div id="bar3"></div>
+		</span>
+		<div id="menu">
+			<ul style="color: white; display: block; list-style: none; position: relative; top: 10%;">
+				<li id = 'home'><a>HOME</a></li>
+				<li id = "level1"><a>LEVEL 1</a></li>
+				<li id = "level2"><a>LEVEL 2</a></li>
+				<li id = 'about'><a>ABOUT</a></li>
+			</ul>
+		</div>
+		<div id="cross" onclick="closeit()">&times;</div>
+		
+		<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+		<script src="homepage.js">
+		</script>
+	</body>
+	
+</html>

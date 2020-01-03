@@ -1,0 +1,318 @@
+/* declaration of animations */
+
+@keyframes popup {
+	0% {
+		transform: scale(0 , 0);
+	}
+	100% {
+		transform: scale(1 , 1);
+	}
+}
+body {
+	color: black;
+}
+
+
+#slideshow {
+	position: absolute;
+	top: -3%;
+	width: 100%;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 94%;
+	border-radius: 0px;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	-webkit-transition: all 1s;
+	-moz-transition: all 1s;
+	
+}
+div {
+	transition: all 0.4s;
+}
+#temp {
+	position: absolute;
+	left: 100px;
+	top: 290px;
+}
+#aboutus {
+	position: absolute;
+	top: 92.4%;
+	left: 0;
+	width: 50%;
+	cursor: pointer;
+	height: 65%;
+	
+}
+#contactus {
+	position: absolute;
+	top: 92.4%;
+	left: 50%;
+	width: 50%;
+	height: 65%;
+	cursor: pointer;
+}
+#joinus {
+	position: absolute;
+	top: 92.4%;
+	left: 50%;
+	width: 25%;
+	height: 45%;
+	cursor: pointer;
+	visibility: hidden;
+}
+#donate {
+	position: absolute;
+	top: 92.4%;
+	left: 75%;
+	width: 25%;
+	height: 45%;
+	cursor: pointer;
+	visibility: hidden;
+}
+#aboutus:hover {
+	background-color: #99ff55;
+}
+#contactus:hover {
+	background-color: #ff9955;
+}
+#joinus:hover {
+	background-color: #9955ff;
+}
+#donate:hover {
+	background-color: #99ffff;
+}
+
+
+#popup {
+	display: none;
+	width: 100%;
+	height: 280%;
+	opacity: 0.6;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	z-index: 2;
+}
+#popup-content1 , #popup-content2 , #popup-content3 , #popup-content4 {
+	position: fixed;
+	top: 5%;
+	height: 90%;
+	width: 75%;
+	left: 12.5%;
+	background-color: red;
+	z-index: 3;
+	display: none;
+}
+.popupanimate {
+	animation-name: popup;
+	animation-duration: 0.4s;
+}
+img {
+	width: 80%;
+	height: 55%;
+	margin-left: 30px;
+}
+#hr {
+	position: absolute;
+	top: 150%;
+	left: 37.5%;
+	width: 25%;
+	border-bottom: 8px solid black;
+	border-top: 8px solid black;
+	height: 0;
+	border-radius: 7px;
+}
+#france {
+	position: absolute;
+	top: 161%;
+	left: 0;
+	width: 25%;
+	
+}
+#italy {
+	position: absolute;
+	top: 161%;
+	left: 25%;
+	width: 25%;
+	height: 45%;
+}
+#germany {
+	position: absolute;
+	top: 161%;
+	left: 50%;
+	width: 25%;
+}
+#brazil {
+	position: absolute;
+	top: 161%;
+	left: 75%;
+	width: 25%;
+	height: 45%;
+}
+#france:hover {
+	background-color: #00ff88;
+}
+#italy:hover {
+	background-color: #ffcc55;
+}
+#germany:hover {
+	background-color: #cc22cc;
+}
+#brazil:hover {
+	background-color: #99cc35;
+}
+#bar1 , #bar2 , #bar3 {
+	border-top: 3.5px solid white;
+	border-bottom: 3.5px solid white;
+	border-radius: 0;
+	height: 0;
+	width: 3%;
+	display: block;
+}
+#bar1 {
+	position: fixed;
+	top: 3%;
+	left: 6px;
+	z-index: 1;
+	transition: all 0.4s;
+	cursor: pointer;
+}
+#bar2 {
+	position: fixed;
+	top: 4.5%;
+	left: 6px;
+	z-index: 1;
+	transition: all 0.4s;
+	cursor: pointer;
+}
+#bar3 {
+	position: fixed;
+	top: 6%;
+	left: 6px;
+	z-index: 1;
+	transition: all 0.4s;
+	cursor: pointer;
+}
+#menu {
+	position: fixed;
+	top: 0;
+	left: -13%;
+	visibility: visible;
+	width: 13%;
+	height: 100%;
+	background: black;
+	opacity: 0.8;
+	transition: all 0.4s;
+}
+
+ 
+}
+#a2:hover {
+	border-left-color: grey;
+}
+#a1:hover {
+	border-right-color: grey;
+}
+li {
+	margin: 10px 10px 10px 10px;
+	font-family: impact;
+	font-size: 20px;
+	transition: all 0.3s;
+}
+a:hover {
+	background: white;
+	color: black;
+	border-radius: 5px;
+}
+a {
+	display: block;
+	color: white;
+	text-decoration: none;
+	transition: all 0.3s;
+	text-align: center;
+}
+
+#cross {
+	position: fixed;
+	z-index: 3;
+	display: none;
+	top: 5%;
+	left: 84%;
+	animation-name: popup;
+	animation-duration: 0.4s;
+	font-size: 60px;
+	font-weight: bold;
+	font-family: impact;
+	color: red;
+	cursor: pointer;
+}
+
+#level1_adj {
+	position: relative;
+	top: 23.5%;
+	font-size: 50px;
+}
+#level2_adj {
+	position: relative;
+	top: 23.5%;
+	font-size: 50px;
+}
+
+#adjimg1 {
+	position: relative;
+	top: 15%;
+	width:40%;
+	left: 25%;
+}
+#adjimg2 {
+	position: relative;
+	top: 24%;
+	left: 22%;
+	width: 50%;
+}
+body {
+  margin: 0;
+  font:normal 75% Arial, Helvetica, sans-serif;
+}
+#anal_adj {
+	position: relative;
+	top: 10px;
+	height: 80%;
+}
+#title {
+	color: white;
+	position: absolute;
+	top: 35%;
+	font-size: 90px;
+	z-index: 2;
+	left: 30%;
+	background-color: transparent;
+	font-family: Marker Felt;
+}
+
+canvas {
+  display: block;
+  vertical-align: bottom;
+}
+
+/* ---- particles.js container ---- */
+
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 92.4%;
+  top:0;
+  background-color: black;
+  background-image: url("");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+#des {
+	font-size: 30px;
+}
+
