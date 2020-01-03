@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://cdn.rawgit.com/naptha/tesseract.js/0.2.0/dist/tesseract.js"></script>
+    <link rel="stylesheet" type="text/css" href="css.css">
+</head>
+<body>
+    <script src="speakClient.js"></script>
+    <div id = "level">LEVEL 2</div>
+    <div id="audio"></div>
+    <iframe src = "http://192.168.43.163:8080/" width = "1000px" height = "400px" id = "whiteboard"></iframe> 
+	<!-- <input type="text" id="url" placeholder="Image URL" /> -->
+	<input type="image" id="go_button" value="Run" src = "run.png"/ onclick = "pop()" title = "Check my word">
+       
+	<div id="ocr_results" class = "ocr"> </div>
+	<div id="ocr_status" class = "ocr"> </div>
+    <input type="button" value="SPEAK" id = "speak">
+    <span id="bars" onclick="menu();" style="height: 100%; display: block;">
+            <div id="bar1"></div>
+            <div id="bar2"></div>
+            <div id="bar3"></div>
+        </span>
+        <div id="menu">
+            <ul style="color: white; display: block; list-style: none; position: relative; top: 10%;">
+                <li><a href="#slideshow" id = "home">HOME</a></li>
+                <li><a href="#aboutus" id = "level1">LEVEL 1</a></li>
+                <li><a href="#aboutus" id = "level2">LEVEL 2</a></li>
+                <li><a href="#aboutus" id = "about">ABOUT</a></li>
+            </ul>
+        </div>
+        <div id = "instruction">⌘ + ⇧ + S <br> for screenshot</div>
+        <div id="popup"></div>
+        <span id="popup-content1">
+            <h1 style="text-align: center;">CHECK YOUR WORD?</h1>
+            <p style="font-family: 'copperplate gothic'; font-size: 20px; padding: 90px; padding-top: 0px; font-weight: bold;">
+                Clicking go will check the last screenshot that you have taken. Are you sure you want to proceed?
+            </p>
+             <input type="button" id="go_button2" value="GO!"/>
+             
+        </span>
+            <div id="cross" onclick="closeit()">&times;</div>
+
+	<script type="text/javascript">
+        s = document.getElementById("speak");
+        ch = document.getElementById("go_button");
+        bars = document.getElementById("bars");
+        men1 = document.getElementById("home");
+        men2 = document.getElementById("level1");
+        men3 = document.getElementById("level2");
+        men4 = document.getElementById("about");
+        gb = document.getElementById("go_button2");
+        cr = document.getElementById("cross");
+        var voice = confirm("Enable voiceover?");
+         men1.onclick = function(){
+            document.location.href = "file:///Users/parth_mac/Downloads/New%20homework/homepage.html"
+        }
+        men2.onclick = function(){
+            document.location.href = "file:///Users/parth_mac/Desktop/html/htmtest.html"
+        }
+        men3.onclick = function(){
+            document.location.href = "file:///Users/parth_mac/Desktop/html/htmtest2.html"
+        }
+        men4.onclick = function(){
+            document.location.href = "file:///Users/parth_mac/Downloads/New%20homework/about.html"
+        }
+        if(voice){
+            men1.onmouseover = function(){
+                speak("home" , {pitch: 100 , speed: 170});
+            }
+            men2.onmouseover = function(){
+                speak("level 1" , {pitch: 100 , speed: 170});
+            }
+            men3.onmouseover = function(){
+                speak("level 2" , {pitch: 100 , speed: 170});
+            }
+            men4.onmouseover = function(){
+                speak("ABOUT" , {pitch: 100 , speed: 170})
+            }
+            bars.onmouseover = function(){
+                speak("MENU" , {pitch: 100 , speed: 170});
+            }
+            ch.onmouseover = function(){
+                speak("check" , {pitch: 100 , speed: 170});
+            }
+            s.onmouseover = function(){
+                speak("Speak" , {pitch: 100 , speed: 170});
+            } 
+             gb.onmouseover = function(){
+                speak("GO!" , {pitch: 100 , speed: 170});
+            }
+            cr.onmouseover = function(){
+                speak("cancel" , {pitch: 100 , speed: 170});
+            }
+        }
+        l = ["PAT" , "ANT" , "PIG" , "WOW" , "BALL" , "CAT"];
+        var no = 0;
+        var change = false;
+        var attempts = 0;
+        var cattempts = 0;
+        s.onclick = function() {
+            if(change){
+                no += 1;
+                change = false;
+            }
+            speak(l[no%6] , {pitch: 50 , speed: 170});
+        }
+        function show(){
+            a = document.getElementById("go_button2").style;
+            a.visibility = "visible";
+            a.transition = "all 1s";
+            a.opacity = "1";
+
+        }
+        function closeit() {
+            var a = document.getElementById("popup");
+            var b = document.getElementById("popup-content1");
+            a.style = "";
+            b.className = "";
+            b.style = "";
+            a.style = "";
+            b.style = "";
+            document.body.style = "";
+            document.getElementById("cross").style.display = "none";
+        }
+        function pop(){
+            document.getElementById("cross").style.display = "block";
+            var a = document.getElementById("popup");
+            var b = document.getElementById("popup-content1");
+            a.style.display = "block";
+            b.className = "popupanimate";
+            b.style.background = "#99ff55";
+            a.style.background = "grey";
+            b.style.display = "block";
+            document.body.style.overflow = "hidden";
+            show();
+        }
+        function menu() {
+            var a = document.getElementById("menu");
+            var b = document.getElementById("bar1");
+            var c = document.getElementById("bar2");
+            var d = document.getElementById("bar3");
+            var e = document.getElementById("bars");
+            a.style.left = "0";
+            b.style.left = "10%";
+            c.style.display = "none";
+            c.style.opacity = "0";
+            d.style.left = "10%";
+            b.style.transform = "rotate(-35deg)";
+            d.style.transform = "rotate(35deg)";
+            b.style.width = "2%";
+            d.style.width = "2%";
+            b.style.top = "4.4%";
+            b.style.borderWidth = "4px";
+            d.style.borderWidth = "4px";
+            e.onclick = function() {
+                a.style = "";
+                b.style = "";
+                c.style = "";
+                d.style = "";
+                e.onclick = function() {menu()};
+            };
+        }
+		function runOCR(url , q) {
+    Tesseract.recognize(url)
+         .then(function(result) {
+            window.correct = 0;
+            if(q == 0){
+                var ans = result.text.replace(/\s/g, "");
+                ans = ans.replace(/[a-z]/g, '' );
+                ans = ans.replace(/[^a-zA-Z ]/g, "")
+                ans = ans.toUpperCase();
+                if(ans == "WW"){
+                	ans = "W";
+                }
+                if(ans.localeCompare(l[no%6]) == 0){
+                    window.correct = 1;
+                    speak("correct" , {pitch: 50 , speed: 170});
+                    change = true;
+                    cattempts += 1;
+                    if(ans == "CAT"){
+                    	alert("Your accuracy is " + Math.round(((cattempts)/attempts) * 100) + "%. Out of " + attempts + " attempts, " + cattempts + " were correct. You may retake the test.");
+                    	no = -1;
+                    	cattempts = 0;
+                    	attempts = 0;
+                	}
+                	else{
+                        speak("correct" , {pitch: 50 , speed: 170});
+
+                		alert("Correct. Move on to the next word.");
+                	}
+                }
+                else{
+                    window.correct = 0;
+                    speak("incorrect please try again" , {pitch: 50 , speed: 170});
+                    alert("Incorrect- " + ans);
+                }
+            }
+            else{
+                var ans = result.text.replace(/\s/g, "");
+                // alert(ans);
+            }
+         }).progress(function(result) {
+            document.getElementById("ocr_status")
+                    .innerText = result["status"] + " (" +
+                        (result["progress"] * 100) + "%)";
+        });
+}
+e = document.getElementById("go_button2");
+f = document.getElementById("go_button");
+
+f.addEventListener("click" , function(f){
+    e.style.visibility = "visible";
+});
+console.log(typeof(e));
+
+
+        e.addEventListener("click", function(e) {
+            // runOCR("/Users/parth_mac/Downloads/Screenshot_2019-11-16 Tesseract test" + "(" + 1 + ")" + ".png");
+            // alert("working");
+            // var url = document.getElementById("url").value;
+            var i;
+            attempts += 1;
+            for(i = 100 ; i >= 0 ; i--){
+                console.log("what");
+            }
+            closeit();
+            var a = 100;
+            var i;
+            var im = new Image();
+            window.flag = 0;
+            // alert("working");
+            function preload(a){
+                var im = new Image();
+                t = 0;
+                im.src = "/Users/parth_mac/Downloads/Screenshot_2019-11-29 Screenshot" + "(" + a + ")" + ".png";
+                setTimeout(100);
+                im.onload = function(){
+                    if(window.flag != 1){runOCR("/Users/parth_mac/Downloads/Screenshot_2019-11-29 Screenshot" + "(" + a + ")" + ".png" , 0);}
+                    window.flag = 1;
+                    // alert(a);
+                }
+                
+            }
+            while(a >= 0){
+                // alert("working");
+                // alert("working" + a);
+                preload(a);
+                if(window.flag == 1){
+                    break;
+                }
+                a = a - 1;
+                
+            }
+            
+        });
+        f.addEventListener("click", function(f) {
+            // runOCR("/Users/parth_mac/Downloads/Screenshot_2019-11-16 Tesseract test" + "(" + 1 + ")" + ".png");
+            // alert("working");
+            // var url = document.getElementById("url").value;
+            var i;
+            for(i = 100 ; i >= 0 ; i--){
+                console.log("what");
+            }
+            closeit();
+            var a = 100;
+            var i;
+            var im = new Image();
+            window.flag = 0;
+            // alert("working");
+            function preload(a){
+                var im = new Image();
+                t = 0;
+                im.src = "/Users/parth_mac/Downloads/Screenshot_2019-11-29 Screenshot" + "(" + a + ")" + ".png";
+                setTimeout(100);
+                im.onload = function(){
+                    if(window.flag != 1){runOCR("/Users/parth_mac/Downloads/Screenshot_2019-11-29 Screenshot" + "(" + a + ")" + ".png" , 1);}
+                    window.flag = 1;
+                    // alert(a);
+                }
+                
+            }
+            while(a >= 0){
+                // alert("working");
+                // alert("working" + a);
+                preload(a);
+                if(window.flag == 1){
+                    break;
+                }
+                a = a - 1;
+                
+            }
+            pop();
+            
+        });
+    console.log("ahh");
+
+	</script>
+</body>
+</html>
